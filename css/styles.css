@@ -6,7 +6,6 @@
 body {
   line-height: 1.5;
   font-family: sans-serif;
-  margin: 0 auto;
 }
 
 header {
@@ -30,7 +29,6 @@ header {
   background-color: var(--main-color);
   border-radius: 0.625rem;
   transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
 }
 
 svg {
