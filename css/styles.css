@@ -1,0 +1,125 @@
+:root {
+  --main-color: #cc0100;
+  --dark-color: #212121;
+}
+
+body {
+  line-height: 1.5;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--dark-color);
+  height: 5rem;
+}
+
+.menu-btn {
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 1.5625rem;
+  display: block;
+  height: 0.1875rem;
+  margin: 0.3125rem auto;
+  background-color: var(--main-color);
+  border-radius: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+svg {
+  width: 2.5rem;
+  fill: var(--main-color);
+}
+
+.logo-flex {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.logo-flex a {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.active .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.active .menu-btn span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.active .menu-btn span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.active .sliding-menu {
+  left: 0;
+  z-index: 10;
+}
+
+nav {
+  min-width: 15.625rem;
+  background-color: var(--dark-color);
+  height: 100vh;
+  position: absolute;
+  left: -15.625rem;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+ul.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  line-height: 3.125rem;
+  text-align: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.5s ease-in-out;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  text-decoration-color: var(--main-color);
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    flex-direction: row-reverse;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    height: auto;
+  }
+
+  ul.menu {
+    margin: 0;
+  }
+
+  .menu {
+    display: flex;
+    gap: 0.75rem;
+  }
+}
